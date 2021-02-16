@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.lablabla.goldenfish";
+option java_outer_classname = "GoldenFishProto";
+
+package goldenfish;
+
+// Interface exported by the server.
+service GoldenFish {
+  rpc RegisterValve(Valve) returns (Status);
+}
+
+message Valve {
+  int32 id = 1;
+  string description = 2;
+}
+
+message Status {
+  int32 code = 1;
+  string details = 2;
+}
